@@ -5,7 +5,7 @@
     if (document.getElementById('socolata-quest-master')) document.getElementById('socolata-quest-master').remove();
     
     const style = document.createElement('style');
-    style.id = 'socolata-v12-style';
+    style.id = 'socolata-v2-style';
     style.innerHTML = `
         #socolata-quest-master {
             position: fixed; top: 100px; left: 100px; z-index: 999999;
@@ -37,7 +37,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         
-        /* אפקט סיום */
         .finished-pulse { animation: pulse-green 2s infinite; }
         @keyframes pulse-green {
             0% { box-shadow: 0 0 0 0 rgba(67, 181, 129, 0.7); }
@@ -59,7 +58,7 @@
     gui.id = 'socolata-quest-master';
     gui.innerHTML = `
         <div class="gui-header" id="socolata-drag">
-            <span id="h-title">SOCOLATA V12 CHROMA</span>
+            <span id="h-title">SOCOLATA V2</span>
             <div class="header-btns"><button id="soco-min">_</button><button id="socolata-close">×</button></div>
         </div>
         <div id="min-icon">S</div>
@@ -76,21 +75,19 @@
             
             <button id="soco-run" class="gui-button btn-run">Engage Max Velocity</button>
             <button id="soco-stop" class="gui-button btn-stop">Emergency Stop</button>
-            <div id="soco-log" class="gui-console">Chroma Engine Active. Ready for Strike.</div>
+            <div id="soco-log" class="gui-console">V2 Chroma Engine Active. Ready.</div>
         </div>
     `;
     document.body.appendChild(gui);
 
     const log = (msg) => { const l = document.getElementById('soco-log'); if(l) { l.innerHTML += `<div>> ${msg}</div>`; l.scrollTop = l.scrollHeight; } };
 
-    // --- Dynamic Color Logic ---
     const getProgressColor = (percent) => {
-        if (percent < 30) return "#f04747"; // אדום בהתחלה
-        if (percent < 70) return "#faa61a"; // כתום/צהוב באמצע
-        return "#43b581"; // ירוק בסוף
+        if (percent < 30) return "#f04747";
+        if (percent < 70) return "#faa61a";
+        return "#43b581";
     };
 
-    // --- Window Controls ---
     document.getElementById('soco-min').onclick = (e) => {
         e.stopPropagation();
         isMinimized = !isMinimized;
@@ -107,7 +104,6 @@
     document.onmouseup = () => isDown = false;
     document.onmousemove = (e) => { if (isDown) { gui.style.left = (e.clientX + offset[0]) + 'px'; gui.style.top = (e.clientY + offset[1]) + 'px'; } };
 
-    // --- Engine ---
     const runEngine = async () => {
         if (isRunning) return;
         isRunning = true;
@@ -141,15 +137,13 @@
                 const bar = document.getElementById('soco-progress-bar');
                 bar.style.width = percent + '%';
                 bar.style.backgroundColor = getProgressColor(percent);
-                
                 if(percent >= 100) bar.classList.add('finished-pulse');
             };
 
             const handleQuest = async (q) => {
                 const name = q.config.messages.questName;
-                const tasks = q.config.taskConfigV2?.tasks || q.config.taskConfig?.tasks;
-                const tKey = Object.keys(tasks)[0];
-                const target = tasks[tKey].target;
+                const tKey = Object.keys(q.config.taskConfigV2?.tasks || q.config.taskConfig?.tasks)[0];
+                const target = (q.config.taskConfigV2?.tasks || q.config.taskConfig?.tasks)[tKey].target;
 
                 while (isRunning) {
                     const current = QuestsStore.getQuest(q.id);
@@ -166,12 +160,12 @@
                         updateStats();
                     } catch (e) { await new Promise(r => setTimeout(r, 5000)); }
                 }
-                log(`Neutralized: ${name.substring(0,10)}...`);
+                log(`Neutralized: ${name.substring(0,12)}...`);
             };
 
             const targets = [...QuestsStore.quests.values()].filter(x => x.userStatus?.enrolledAt && !x.userStatus?.completedAt);
             if(targets.length > 0) {
-                log(`Velocity Active. Targets: ${targets.length}`);
+                log(`V2 Parallel Strike: ${targets.length} targets.`);
                 document.getElementById('soco-task-name').innerText = "STRIKE IN PROGRESS";
                 document.getElementById('soco-task-name').style.color = "#faa61a";
                 await Promise.all(targets.map(q => handleQuest(q)));
@@ -180,16 +174,15 @@
                 log("CLEAN SWEEP COMPLETE.");
             } else { log("No active targets found."); }
 
-        } catch (e) { log("Fatal System Error."); }
+        } catch (e) { log("Fatal Error."); }
         isRunning = false;
         document.getElementById('soco-run').disabled = false;
     };
 
     document.getElementById('soco-run').onclick = runEngine;
-    document.getElementById('soco-stop').onclick = () => { isRunning = false; log("FORCE STOPPED."); };
+    document.getElementById('soco-stop').onclick = () => { isRunning = false; log("STOPPED."); };
     document.getElementById('socolata-close').onclick = () => { isRunning = false; gui.remove(); };
     
-    // Initial Sync
     setTimeout(() => {
         try {
             let wp = webpackChunkdiscord_app.push([[Symbol()], {}, r => r]); webpackChunkdiscord_app.pop();
