@@ -7,4 +7,6 @@
 4. Past in the code after started
 5. Wait the needed time (for video quest instantly!)
 
-# 
+# **Credits**
+Credits to socolata#2995 on discord!
+if your'e leaking give credits!
