@@ -1,5 +1,7 @@
 # Discord Auto Quest With Gui V2 Recoded
 
+# Still Have Some Bugs In Orbs Counter...
+
 # **Instructions**
 1. Enable developer tools on discord ( https://www.youtube.com/watch?v=xsaubCCd8to )
 2. Press ( ctrl + shift + i ) when discord is open
