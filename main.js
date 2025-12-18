@@ -5,7 +5,7 @@
     if (document.getElementById('socolata-quest-master')) document.getElementById('socolata-quest-master').remove();
     
     const style = document.createElement('style');
-    style.id = 'socolata-v2-style';
+    style.id = 'socolata-v2-english-style';
     style.innerHTML = `
         #socolata-quest-master {
             position: fixed; top: 100px; left: 100px; z-index: 999999;
@@ -59,7 +59,7 @@
     gui.innerHTML = `
         <div class="gui-header" id="socolata-drag">
             <span id="h-title">SOCOLATA V2</span>
-            <div class="header-btns"><button id="soco-min">_</button><button id="socolata-close">×</button></div>
+            <div class="header-btns"><button id="soco-min" title="Minimize">_</button><button id="socolata-close" title="Close">×</button></div>
         </div>
         <div id="min-icon">S</div>
         <div id="socolata-body">
@@ -75,7 +75,7 @@
             
             <button id="soco-run" class="gui-button btn-run">Engage Max Velocity</button>
             <button id="soco-stop" class="gui-button btn-stop">Emergency Stop</button>
-            <div id="soco-log" class="gui-console">V2 Chroma Engine Active. Ready.</div>
+            <div id="soco-log" class="gui-console">V2 Chroma Engine Active. Awaiting command...</div>
         </div>
     `;
     document.body.appendChild(gui);
@@ -160,7 +160,7 @@
                         updateStats();
                     } catch (e) { await new Promise(r => setTimeout(r, 5000)); }
                 }
-                log(`Neutralized: ${name.substring(0,12)}...`);
+                log(`Neutralized: ${name.substring(0,15)}...`);
             };
 
             const targets = [...QuestsStore.quests.values()].filter(x => x.userStatus?.enrolledAt && !x.userStatus?.completedAt);
@@ -172,17 +172,21 @@
                 document.getElementById('soco-task-name').innerText = "MISSION ACCOMPLISHED";
                 document.getElementById('soco-task-name').style.color = "#43b581";
                 log("CLEAN SWEEP COMPLETE.");
-            } else { log("No active targets found."); }
+            } else { 
+                log("No active targets found."); 
+                document.getElementById('soco-task-name').innerText = "NO TARGETS";
+            }
 
-        } catch (e) { log("Fatal Error."); }
+        } catch (e) { log("Fatal Error: System Interrupted."); }
         isRunning = false;
         document.getElementById('soco-run').disabled = false;
     };
 
     document.getElementById('soco-run').onclick = runEngine;
-    document.getElementById('soco-stop').onclick = () => { isRunning = false; log("STOPPED."); };
+    document.getElementById('soco-stop').onclick = () => { isRunning = false; log("FORCED STOP."); };
     document.getElementById('socolata-close').onclick = () => { isRunning = false; gui.remove(); };
     
+    // Initial Sync (English Logs)
     setTimeout(() => {
         try {
             let wp = webpackChunkdiscord_app.push([[Symbol()], {}, r => r]); webpackChunkdiscord_app.pop();
@@ -194,6 +198,7 @@
             let orbs = 0;
             all.filter(x => x.userStatus?.enrolledAt && !x.userStatus?.completedAt).forEach(q => orbs += (q.config.rewardsConfig?.rewards?.find(r => r.skuId === "1258133503027974246")?.amount || 0));
             document.getElementById('soco-orbs').innerText = orbs;
-        } catch(e) {}
+            log("System Check: All modules loaded.");
+        } catch(e) { log("System Check: Module loading failed."); }
     }, 1000);
 })();
