@@ -1,4 +1,4 @@
-# Discord Auto Quest With Gui
+# Discord Auto Quest With Gui Still have some bugs... but recode soon!!!
 
 # **Instructions**
 1. Enable developer tools on discord ( https://www.youtube.com/watch?v=xsaubCCd8to )
