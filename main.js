@@ -104,7 +104,7 @@
     gui.id = 'socolata-quest-master';
     gui.innerHTML = `
         <div class="gui-header" id="socolata-drag">
-            <span>QUEST MASTER V3.0</span>
+            <span>SOCOLATA QUEST MASTER V3.0</span>
             <div class="header-btns">
                 <button id="soco-min">_</button>
                 <button id="socolata-close">×</button>
@@ -271,3 +271,4 @@
     setInterval(updateStats, 3000);
     updateStats();
 })();
+
