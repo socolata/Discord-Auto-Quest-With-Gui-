@@ -13,24 +13,28 @@ if your'e leaking give credits!
 
 # Features
 
- Instant Video Quest Completion – Automatically finishes video-based quests in seconds without having to watch them.
+# Features
 
- One-Click "Complete All" – A powerful button that scans and executes all your Accepted quests simultaneously.
+🚀 **Instant Video Quest Completion** – Automatically finishes video-based quests in seconds by sending calculated progress timestamps, bypassing the need to watch the content.
 
- Intelligent Validation – Prevents errors by checking if quests are accepted before running. Displays a warning if no active quests are detected.
+⚡ **One-Click "Complete All"** – A high-performance engine that scans and executes all your **Accepted** quests in parallel for maximum efficiency.
 
- Platform Detection (Web vs. App) – Automatically detects if you are using Discord Web or the Desktop App to ensure compatibility.
+🛡️ **Safe Shutdown (Worker Tracking)** – Features a sophisticated "Active Worker" counter. When **Emergency Stop** is pressed, the script waits for current network tasks to sync before declaring a full stop, preventing background "ghost" processes and errors.
 
- Game-Task Safeguard – Identifies quests that require game detection. If running on Web, it skips game tasks (which require the App) and provides a direct download link to the Discord App.
+✅ **Intelligent Validation** – Checks Discord's internal Quest Store to ensure quests are enrolled. Provides real-time feedback and warnings if no active quests are detected.
 
- Smart UI Logic – The execution button dynamically locks (turns grey) during the process to prevent duplicate requests and unlocks upon completion.
+🔘 **Smart UI Logic** – The execution button dynamically locks (turns grey) during processing to prevent duplicate requests and server-side conflicts, unlocking automatically upon completion.
 
- Emergency Stop – A dedicated "Kill Switch" to immediately halt all background processes and reset the UI.
+🛑 **Emergency Stop (Kill Switch)** – A dedicated button to immediately halt all background loops and safely reset the UI state.
 
- Live Progress Tracking – Real-time progress bar and status cards showing exactly how many quests are active and completed.
+📊 **Live Progress Tracking** – Real-time status cards and a global percentage bar showing exactly how many quests are active, completed, and the total progress made.
 
- Minimized Mode (Stealth) – Collapse the GUI into a small floating icon to keep your Discord workspace clean while the script runs.
+↔️ **Resizable & Responsive GUI** – Fully customizable interface. Use the resize handle to expand the window; the console log automatically scales to fit the new height and width perfectly.
 
- Draggable & Resizable GUI – Fully customizable interface that you can move anywhere on your screen.
+layout **Minimized Mode (Stealth)** – Collapse the GUI into a compact floating bar that displays live progress in the title, keeping your Discord workspace clean while running.
 
- Real-Time Console Logs – Integrated terminal with color-coded feedback for successful executions, warnings, and error handling.
+🖱️ **Draggable Interface** – Move the Quest Master window anywhere on your screen with a smooth, native-feeling drag handle.
+
+📟 **Real-Time Console Logs** – Integrated terminal with color-coded feedback. Now includes a **Silent Error Filter** to keep logs clean and a **Clear Logs** button to tidy up the console history.
+
+🛰️ **Rate-Limit Safeguard** – Built-in 429 (Rate Limit) detection that automatically pauses and retries, protecting your account from being flagged by Discord’s servers.
