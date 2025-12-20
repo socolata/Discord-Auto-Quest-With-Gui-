@@ -1,40 +1,41 @@
-# Discord Auto Quest With Gui V3 Recoded
+## Discord Auto Quest With Gui V3 Recoded
 
-# **Instructions**
-1. Enable developer tools on discord ( https://www.youtube.com/watch?v=xsaubCCd8to )
-2. Press ( ctrl + shift + i ) when discord is open
-3. Start your quest that you want to complete
-4. Past in the code after started
-5. Wait the needed time (for video quest instantly!)
+## **Instructions**
+* 1. Enable developer tools on discord ( https://www.youtube.com/watch?v=xsaubCCd8to )
+* 2. Press ( ctrl + shift + i ) when discord is open
+* 3. Start your quest that you want to complete
+* 4. Past in the code after started
+* 5. Wait the needed time (for video quest instantly!)
 
 # **Credits**
-Credits to socolata#2995 on discord!
+* Credits to socolata#2995 on discord!
 if your'e leaking give credits!
 
-# Features
+## 🌟 Features
 
-# Features
+* **Instant Video Quest Completion** – Automatically finishes video-based quests in seconds without having to watch them.
 
-🚀 **Instant Video Quest Completion** – Automatically finishes video-based quests in seconds by sending calculated progress timestamps, bypassing the need to watch the content.
+* **One-Click "Complete All"** – A powerful engine that scans and executes all your accepted quests simultaneously.
 
-⚡ **One-Click "Complete All"** – A high-performance engine that scans and executes all your **Accepted** quests in parallel for maximum efficiency.
+* **Intelligent Validation** – Prevents errors by checking if quests are accepted before running and displays warnings if no active quests are detected.
 
-🛡️ **Safe Shutdown (Worker Tracking)** – Features a sophisticated "Active Worker" counter. When **Emergency Stop** is pressed, the script waits for current network tasks to sync before declaring a full stop, preventing background "ghost" processes and errors.
+* **Platform Detection (Web vs. App)** – Automatically detects your environment to ensure compatibility between Discord Web and the Desktop App.
 
-✅ **Intelligent Validation** – Checks Discord's internal Quest Store to ensure quests are enrolled. Provides real-time feedback and warnings if no active quests are detected.
+* **Game-Task Safeguard** – Skips game tasks on Web (which require the App) and provides a direct download link to the Desktop App.
 
-🔘 **Smart UI Logic** – The execution button dynamically locks (turns grey) during processing to prevent duplicate requests and server-side conflicts, unlocking automatically upon completion.
+* **Smart UI Logic** – The execution button dynamically locks during processing to prevent duplicate requests and unlocks upon completion.
 
-🛑 **Emergency Stop (Kill Switch)** – A dedicated button to immediately halt all background loops and safely reset the UI state.
+* **Emergency Stop** – A dedicated "Kill Switch" to immediately halt all background processes and reset the UI.
 
-📊 **Live Progress Tracking** – Real-time status cards and a global percentage bar showing exactly how many quests are active, completed, and the total progress made.
+* **Live Progress Tracking** – Real-time progress bar and status cards showing exactly how many quests are active and completed.
 
-↔️ **Resizable & Responsive GUI** – Fully customizable interface. Use the resize handle to expand the window; the console log automatically scales to fit the new height and width perfectly.
+* **Minimized Mode (Stealth)** – Collapse the GUI into a small floating bar to keep your workspace clean while the script runs.
 
-layout **Minimized Mode (Stealth)** – Collapse the GUI into a compact floating bar that displays live progress in the title, keeping your Discord workspace clean while running.
+* **Resizable & Draggable GUI** – Fully customizable interface; the console log automatically adjusts its height and width when you resize the window.
 
-🖱️ **Draggable Interface** – Move the Quest Master window anywhere on your screen with a smooth, native-feeling drag handle.
+* **Real-Time Console Logs** – Integrated terminal with color-coded feedback for successful executions, warnings, and error handling.
 
-📟 **Real-Time Console Logs** – Integrated terminal with color-coded feedback. Now includes a **Silent Error Filter** to keep logs clean and a **Clear Logs** button to tidy up the console history.
+## ⚠️ Disclaimer
 
-🛰️ **Rate-Limit Safeguard** – Built-in 429 (Rate Limit) detection that automatically pauses and retries, protecting your account from being flagged by Discord’s servers.
+**This tool is for educational purposes only. Use it at your own risk. We are not responsible for any actions taken against your account by third parties.**
+
