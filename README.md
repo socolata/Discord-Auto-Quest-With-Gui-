@@ -1,11 +1,13 @@
 ## Discord Auto Quest With Gui V3 Recoded
 
-## **Instructions**
-* 1. Enable developer tools on discord ( https://www.youtube.com/watch?v=xsaubCCd8to )
-* 2. Press ( ctrl + shift + i ) when discord is open
-* 3. Start your quest that you want to complete
-* 4. Past in the code after started
-* 5. Wait the needed time (for video quest instantly!)
+## 📖 Instructions
+
+1. **Enable Developer Tools:** First, ensure Developer Tools are enabled on your Discord client (Watch [this guide](https://www.youtube.com/watch?v=xsaubCCd8to) if you're unsure how).
+2. **Open Console:** Press `Ctrl + Shift + I` while Discord is open to access the Developer Tools.
+3. **Accept Your Quests:** Navigate to the Quests tab in Discord and **Start/Accept** the quests you wish to complete.
+4. **Run the Script:** Click on the **Console** tab in the Developer Tools, paste the code, and press `Enter`.
+5. **Complete:** The GUI will appear. Click **"Complete All Accepted Quests"**. 
+* **Note:** Video quests will complete **instantly**, while other quests will progress automatically over the required time.
 
 # **Credits**
 * Credits to socolata#2995 on discord!
