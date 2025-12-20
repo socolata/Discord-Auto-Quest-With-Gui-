@@ -14,7 +14,6 @@
             width: 380px; height: 350px; display: flex; flex-direction: column;
             box-shadow: 0 10px 40px rgba(0,0,0,0.9); resize: both; overflow: hidden;
         }
-        /* עיצוב למצב ממוזער - מלבן קומפקטי במקום עיגול */
         #socolata-quest-master.minimized {
             width: 220px !important; height: 40px !important; 
             border-radius: 8px; resize: none;
@@ -110,7 +109,6 @@
         document.getElementById('soco-progress-bar').style.width = percent + '%';
         document.getElementById('soco-progress-text').innerText = percent + '%';
         
-        // אם ממוזער, נעדכן את הטקסט בכותרת
         if(isMinimized) {
             document.getElementById('title-text').innerText = `QM [${percent}% | ${active.length} Left]`;
         } else {
@@ -168,7 +166,7 @@
         gui.classList.toggle('minimized', isMinimized);
         document.getElementById('socolata-body').style.display = isMinimized ? 'none' : 'flex';
         document.getElementById('soco-min').innerText = isMinimized ? '□' : '_';
-        updateStats(); // עדכון כותרת מיידי
+        updateStats();
     };
 
     document.getElementById('soco-run').onclick = runEngine;
