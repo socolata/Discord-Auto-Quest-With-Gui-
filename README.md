@@ -1,6 +1,6 @@
-## Discord Auto Quest With Gui V3 Recoded
+* ## Discord Auto Quest With Gui V3 Recoded
 
-## 📖 Instructions
+* ## 📖 Instructions
 
 1. **Enable Developer Tools:** First, ensure Developer Tools are enabled on your Discord client (Watch [this guide](https://www.youtube.com/watch?v=xsaubCCd8to) if you're unsure how).
 2. **Open Console:** Press `Ctrl + Shift + I` while Discord is open to access the Developer Tools.
@@ -9,11 +9,11 @@
 5. **Complete:** The GUI will appear. Click **"Complete All Accepted Quests"**. 
 * **Note:** Video quests will complete **instantly**, while other quests will progress automatically over the required time.
 
-# **Credits**
+* # **Credits**
 * Credits to socolata#2995 on discord!
 if your'e leaking give credits!
 
-## 🌟 Features
+* ## 🌟 Features
 
 * **Instant Video Quest Completion** – Automatically finishes video-based quests in seconds without having to watch them.
 
@@ -37,11 +37,11 @@ if your'e leaking give credits!
 
 * **Real-Time Console Logs** – Integrated terminal with color-coded feedback for successful executions, warnings, and error handling.
 
-## ⚠️ Disclaimer
+* ## ⚠️ Disclaimer
 
 **This tool is for educational purposes only. Use it at your own risk. We are not responsible for any actions taken against your account by third parties.**
 
-## GUI :
+* ## GUI :
 
 
 <img width="429" height="575" alt="3b00896f-c2a6-4d58-abc2-7ae6786b4bcd" src="https://github.com/user-attachments/assets/8353536e-0941-42d9-bdec-ff2c5f38a0eb" />
@@ -49,5 +49,4 @@ if your'e leaking give credits!
 
 
 
-
-## ENJOY GUYS!!!!
+* ## made with ❤️ by socolata
