@@ -11,7 +11,7 @@
 
 * # **Credits**
 * Credits to socolata#2995 on discord!
-If you’re leaking give credits!
+If you’re leaking this Tool, give credits!
 
 * ## 🌟 Features
 
